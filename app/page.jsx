@@ -1,5 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { FEATURES } from "@/lib/landing";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -60,6 +62,18 @@ export default function Home() {
             Our platform provides all the tools you need to handle shared
             expenses with ease.
           </p>
+          <div>
+            { FEATURES.map(({title,Icon,bg,color,description})=>(
+            <Card>
+              <div>
+                <Icon className={`h-6 w-6 ${color}`}/>
+              </div>
+              <h3 className="text-xl font-bold">{title}</h3>
+              <p className="text-gray-500">{description}</p>
+              
+            </Card>
+            ))}
+          </div>
     </div>
   </section>
   </div>
